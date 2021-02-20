@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="icon">
+    <mat-icon [inline]="true">storefront</mat-icon>
+  </div>
+  <div class="cart">
+    <button mat-button (click)="openDialog()">
+      <mat-icon style="cursor: pointer;">add_shopping_cart</mat-icon>
+      <span *ngIf="common.noOfItemsInCart > 0">{{common.noOfItemsInCart}}</span>
+    </button>
+  </div>
+</header>
+<hr/>
+<div class="body">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 5%">ID</th>
+        <th style="width: 10%">Name</th>
+        <th style="width: 50%">Description</th>
+        <th style="width: 5%">Price</th>
+        <th style="width: 5%">Quantity</th>
+        <th style="width: 35%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of common.productInfo; let i = index; trackBy: trackby">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+         <div style="float:left; margin-top: 10px;">
+          <mat-icon style="cursor: pointer;" (click)="removeProductQuantity(i)">remove</mat-icon>
+        </div>
+          <span style="float: left; margin: 12px 20px 0;">{{product.defaultQuantity}}</span>
+          <div style="float:left; margin-top: 10px;">
+            <mat-icon style="cursor: pointer;" (click)="addProductQuantity(i)">add</mat-icon>
+          </div>
+          <button mat-fab color="primary" (click)="addToCart(i)">Add</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr/>
+<footer class="footer">
+  <div>
+    Author: Rakesh Kumar Sharma <br />
+    Email: rakeshkrsharma51@gmail.com
+  </div>
+</footer>
+<router-outlet></router-outlet>

@@ -1,0 +1,60 @@
+.header {
+  height: 12%;
+  display: flex;
+  .icon {
+    font-size: 36px;
+    padding: 10px;
+    color: deeppink;
+    width: 94%;
+  }
+  .cart {
+    float: right;
+    width: 6%;
+    padding-top: 11px;
+  }
+}
+
+.body {
+  height: 70%;
+  overflow: auto;
+}
+.body table {
+  width: 98%;
+  margin: 10px;
+  border-collapse: collapse;
+}
+
+.body table tbody td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+button {
+  float: right;
+  margin-right: 25px;
+}
+
+.body span {
+  margin: 0 20px;
+}
+
+.body table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.body table tr:hover {
+  background-color: #ddd;
+}
+
+.footer {
+  height: 11%;
+  text-align: center;
+}
+
+.footer div {
+  padding-top: 20px;
+}
+
+// .cart::ng-deep mat-menu .mat-menu-panel {
+//   min-width: 600px;
+// }
